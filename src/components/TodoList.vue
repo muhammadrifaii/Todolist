@@ -160,34 +160,114 @@ onMounted(loadTodos);
 
 <style scoped>
 .todo-app {
-  max-width: 500px;
-  margin: auto;
-  font-family: Arial, sans-serif;
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f7f9fc;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
 }
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
 input[type="text"],
-input[type="checkbox"],
 input {
-  padding: 6px;
-  margin-right: 6px;
+  flex: 1;
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: 0.3s;
 }
+input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
 button {
-  padding: 6px 10px;
-  margin-left: 50px;
+  padding: 10px 14px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
+  transition: background-color 0.2s ease;
 }
+button:hover {
+  background-color: #0056b3;
+}
+button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
 ul {
   list-style: none;
-  padding-left: 0;
+  padding: 0;
 }
+
 li {
   display: flex;
   align-items: center;
-  margin: 20px 0;
+  background: white;
+  padding: 12px 16px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: 0.2s ease;
 }
+li:hover {
+  transform: scale(1.01);
+}
+
 li span {
   flex-grow: 1;
-  margin-left: 8px;
-  display: flex;
-  align-items: center;
+  margin-left: 12px;
+  font-size: 16px;
+  color: #333;
 }
-</style> 
+
+li input[type="checkbox"] {
+  transform: scale(1.2);
+}
+
+li input[type="text"] {
+  flex-grow: 1;
+  margin-left: 12px;
+}
+
+li button {
+  margin-left: 8px;
+  font-size: 13px;
+}
+
+li button:nth-of-type(1) {
+  background-color: #28a745; /* Hijau untuk simpan/edit */
+}
+li button:nth-of-type(1):hover {
+  background-color: #1e7e34;
+}
+li button:nth-of-type(2) {
+  background-color: #ffc107; /* Kuning untuk batal */
+}
+li button:nth-of-type(2):hover {
+  background-color: #d39e00;
+}
+li button:last-of-type {
+  background-color: #dc3545; /* Merah untuk hapus */
+}
+li button:last-of-type:hover {
+  background-color: #b02a37;
+}
+</style>
